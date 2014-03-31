@@ -20,6 +20,8 @@ public class Get00 extends GetInfoFromDB {
 	}
 
 	public Object getRawData(Object param) {
+		
+		
 		String sql = "select now() as now;";
 		Map result = null;
 		try {
