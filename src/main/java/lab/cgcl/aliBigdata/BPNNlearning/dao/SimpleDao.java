@@ -26,9 +26,8 @@ public class SimpleDao {
 	
 	/**
 	 * Constructor
-	 * @param ds
 	 */
-	public SimpleDao (DataSource ds ) {
+	public SimpleDao () {
 		DbcpPool pool = new DbcpPool();
 		this.dataSource = pool.getDataSource();
 	}

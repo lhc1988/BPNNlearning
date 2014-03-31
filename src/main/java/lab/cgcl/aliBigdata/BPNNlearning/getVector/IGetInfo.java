@@ -24,7 +24,7 @@ public interface IGetInfo {
 	 * 取数据
 	 * @return 该向量对应的值
 	 */
-	public double getData();
+	public double getData(Object param);
 	
 
 }

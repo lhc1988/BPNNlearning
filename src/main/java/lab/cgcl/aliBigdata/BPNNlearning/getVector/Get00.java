@@ -20,7 +20,7 @@ public class Get00 extends GetInfoFromDB {
 	}
 
 	public Object getRawData(Object param) {
-		String sql = "select ";
+		String sql = "select now() as now;";
 		Map result = null;
 		try {
 			result = dao.retrieve(sql);
@@ -33,13 +33,16 @@ public class Get00 extends GetInfoFromDB {
 
 	public void processData(Object object) {
 		// TODO Auto-generated method stub
-
+		Map map = (Map)object;
+		String aa = map.get("now").toString();
+		aa = aa.substring(0 , 4);
+		map.put("now", aa);
 	}
 
-	public double getData() {
-		Object result = getRawData(null);
+	public double getData(Object param) {
+		Object result = getRawData(param);
 		processData(result);
-		return Double.parseDouble(result.toString());
+		return Double.parseDouble( ((Map)result).get("now").toString());
 	}
 
 

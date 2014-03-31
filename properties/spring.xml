@@ -9,4 +9,13 @@
 
     <bean id="test" class="lab.cgcl.aliBigdata.BPNNlearning.Test">
     </bean>
+    
+    <bean id="dao" class="lab.cgcl.aliBigdata.BPNNlearning.dao.SimpleDao">
+    </bean>
+    
+    <bean id="get00" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get00">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
  </beans>
