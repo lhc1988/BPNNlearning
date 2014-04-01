@@ -10,7 +10,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  * @author Administrator
  *
  */
-public class Loader {
+public class TestLoader {
 	
 	public static void main(String[] args) {
 		ApplicationContext appContext = new FileSystemXmlApplicationContext("properties/spring.xml");
