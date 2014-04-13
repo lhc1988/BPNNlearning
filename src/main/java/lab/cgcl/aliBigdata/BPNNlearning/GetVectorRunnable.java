@@ -65,10 +65,7 @@ public class GetVectorRunnable implements Runnable  {
 		sb.append("\n\r");
 	
 		try {
-			FileWriter writer=new FileWriter("e:\\111.txt" ,true);
-			writer.write(sb.toString());
-			
-			writer.close();
+			Write.write1(sb.toString());
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

@@ -81,9 +81,7 @@ public class ValidVectorRunnable implements Runnable  {
 		sb.append("\n\r");
 		
 		try {
-			FileWriter writer=new FileWriter("e:\\222.txt" ,true);
-			writer.write(sb.toString());
-			writer.close();
+			Write.write2(sb.toString());
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
