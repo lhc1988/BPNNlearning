@@ -1,6 +1,5 @@
 package lab.cgcl.aliBigdata.BPNNlearning;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import lab.cgcl.aliBigdata.BPNNlearning.dao.WrapedDao;
@@ -35,7 +34,10 @@ public class ParameterPool {
 	}
 
 	public synchronized UserBrandPair getAPair () {
-		return (UserBrandPair)pool.get(++used);
+		if (used >= pool.size() )
+			return null ;
+		else
+			return (UserBrandPair)pool.get(used++);
 	}
 
 	public void init() {
@@ -51,6 +53,10 @@ public class ParameterPool {
 		
 	}
 	
+	public void restart() {
+		used = 0;
+	}
 	
+
 
 }

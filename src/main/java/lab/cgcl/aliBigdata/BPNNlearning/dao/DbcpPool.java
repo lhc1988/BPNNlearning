@@ -44,6 +44,9 @@ public class DbcpPool {
             ds.setUrl(cfgpp.getProperty("jdbc.url").trim());  
             ds.setUsername(cfgpp.getProperty("jdbc.username").trim());  
             ds.setPassword(cfgpp.getProperty("jdbc.password").trim());  
+            ds.setInitialSize(20);
+            ds.setMaxActive(100);
+            
             fis.close();
         } catch (Exception e) {  
             e.printStackTrace();  

@@ -14,7 +14,17 @@
     <bean id="wrapdao" class="lab.cgcl.aliBigdata.BPNNlearning.dao.WrapedDao">
     </bean>
     
-    <bean id="bp" class="lab.cgcl.aliBigdata.BPNNlearning.BP">
+    <bean id="BPfactory" class="lab.cgcl.aliBigdata.BPNNlearning.BPFactory">
+    	<property name="inputSize">
+    		<value>17</value>
+		</property>
+		<property name="hiddenSize">
+			<value>3</value>
+		</property>
+		<property name="outputSize">
+			<value>2</value>
+		</property>
+    		
     </bean>
     
     <bean id="parameterpool" class="lab.cgcl.aliBigdata.BPNNlearning.ParameterPool">
@@ -23,9 +33,215 @@
 	    </property>
     </bean>
     
-    <bean id="get0" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get00">
+    <bean id="get0" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get0">
     	<property name="dao">
 	    <ref bean="dao" />
 	   </property>
     </bean>
+    
+    <bean id="get1" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get1">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="get2" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get2">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="get3" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get3">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="get4" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get4">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="get5" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get5">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="get6" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get6">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="get7" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get7">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="get8" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get8">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="get9" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get9">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="get10" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get10">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="get11" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get11">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="get12" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get12">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="get13" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get13">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="get14" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get14">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="get15" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get15">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="get16" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get16">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="getLabel" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.GetLabel">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="valid0" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid0">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    <bean id="valid1" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid1">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="valid2" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid2">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="valid3" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid3">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="valid4" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid4">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="valid5" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid5">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="valid6" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid6">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="valid7" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid7">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="valid8" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid8">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="valid9" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid9">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="valid10" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid10">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="valid11" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid11">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="valid12" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid12">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="valid13" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid13">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="valid14" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid14">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="valid15" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid15">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="valid16" class="lab.cgcl.aliBigdata.BPNNlearning.validVector.Valid16">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+   
+    
  </beans>

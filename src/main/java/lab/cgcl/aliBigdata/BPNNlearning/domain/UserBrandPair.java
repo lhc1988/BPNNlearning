@@ -10,6 +10,19 @@ public class UserBrandPair {
 	 * 特征向量
 	 */
 	private double[] vector;
+	
+	/**
+	 * 结果label
+	 */
+	private double label;
+
+	public double getLabel() {
+		return label;
+	}
+
+	public void setLabel(double label) {
+		this.label = label;
+	}
 
 	public String getUser_id() {
 		return user_id;

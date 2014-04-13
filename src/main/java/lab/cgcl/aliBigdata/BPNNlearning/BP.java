@@ -134,7 +134,7 @@ public class BP {
      * @param trainData 
      * @param target 
      */  
-    public void train(double[] trainData, double[] target) {  
+    public synchronized void train(double[] trainData, double[] target) {  
         loadInput(trainData);  
         loadTarget(target);  
         forward();  

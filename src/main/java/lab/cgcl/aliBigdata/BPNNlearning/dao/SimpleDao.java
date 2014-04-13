@@ -80,7 +80,7 @@ public class SimpleDao {
 		}
 		Map <String , Object> res = new HashMap<String , Object>();
 		try {
-			ResultSet rset = stmt.executeQuery(sql);
+			ResultSet rset = stmt.executeQuery();
 			if (rset.next()) {
 				for (i = 1 ; i  <= rset.getMetaData().getColumnCount() ; i ++) {
 					res.put(rset.getMetaData().getColumnName(i) , rset.getString(i) );
