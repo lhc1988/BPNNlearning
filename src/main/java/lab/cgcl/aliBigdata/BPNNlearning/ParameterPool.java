@@ -11,9 +11,9 @@ import lab.cgcl.aliBigdata.BPNNlearning.domain.UserBrandPair;
  *
  */
 public class ParameterPool {
-	private static List<?> pool;
+	private List<?> pool;
 	
-	private static int used = 0;
+	private int used = 0;
 	
 	private WrapedDao dao ;
 	
@@ -22,7 +22,7 @@ public class ParameterPool {
 	}
 
 	public void setPool(List<?> pool) {
-		ParameterPool.pool = pool;
+		this.pool = pool;
 	}
 
 	public WrapedDao getDao() {
@@ -41,20 +41,27 @@ public class ParameterPool {
 	}
 
 	public void init() {
-		String sql1 = "select distinct user_id , brand_id from ali.user_data;";
+		String sql = "select distinct user_id , brand_id from ali.user_data;";
+		init(sql);
+	}
+	
+	public void init (String sql ) {
 		try {
-			pool = dao.list(sql1 ,  UserBrandPair.class);
-			
+			System.out.println("init sql : " + sql);
+			pool = dao.list(sql ,  UserBrandPair.class);
+			used = 0;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 	}
 	
 	public void restart() {
 		used = 0;
+	}
+	
+	public void restart(String sql) {
+		init(sql);
 	}
 	
 

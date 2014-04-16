@@ -36,7 +36,7 @@ public class GetLabel extends GetInfoFromDB {
 	}
 
 	public double getData(Object param) {
-		List list = ParamAdapter.convertPair2List((UserBrandPair)param);
+		List list = ParamAdapter.convertPair2List((UserBrandPair) ((Map)param).get("ubp"));
 		Object result = getRawData(list);
 		processData(result);
 		Map map = (Map)result;

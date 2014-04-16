@@ -33,6 +33,18 @@
 	    </property>
     </bean>
     
+    <bean id="solutionGet" class="lab.cgcl.aliBigdata.BPNNlearning.solution1.Get">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
+    <bean id="solution2Get" class="lab.cgcl.aliBigdata.BPNNlearning.solution2.Get">
+    	<property name="dao">
+	    <ref bean="dao" />
+	   </property>
+    </bean>
+    
     <bean id="get0" class="lab.cgcl.aliBigdata.BPNNlearning.getVector.Get0">
     	<property name="dao">
 	    <ref bean="dao" />

@@ -26,8 +26,19 @@ public class OutPut {
 		}
 	}
 	
-	public void write () throws IOException {
-		FileWriter writer=new FileWriter("e:\\output.txt" ,true);
+	public void process (String user_id , String brand_id) {
+		if (user.containsKey(user_id)) {
+			String src = user.get(user_id);
+			src += " , " + brand_id;
+			user.put(user_id, src);
+		}
+		else {
+			user.put(user_id, brand_id);
+		}
+	}
+	
+	public void write (String outpath) throws IOException {
+		FileWriter writer=new FileWriter( outpath ,true);
 		System.out.println("usersize:" + user.size());
 		Iterator it = user.entrySet().iterator();
 		while(it.hasNext()) {
@@ -36,6 +47,10 @@ public class OutPut {
 			writer.write(entry.getKey() + "\t" + entry.getValue() + "\n");
 		}
 		writer.close();
+	}
+	
+	public void write () throws IOException {
+		write("e:\\output.txt");
 	}
 	
 	public static void main(String[] args) throws IOException {

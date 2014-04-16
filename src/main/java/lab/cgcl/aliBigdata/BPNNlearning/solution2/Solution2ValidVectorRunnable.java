@@ -1,17 +1,23 @@
-package lab.cgcl.aliBigdata.BPNNlearning;
+package lab.cgcl.aliBigdata.BPNNlearning.solution2;
 
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
+import lab.cgcl.aliBigdata.BPNNlearning.OutPut;
+import lab.cgcl.aliBigdata.BPNNlearning.SQLContainer;
+import lab.cgcl.aliBigdata.BPNNlearning.Write;
 import lab.cgcl.aliBigdata.BPNNlearning.domain.UserBrandPair;
 import lab.cgcl.aliBigdata.BPNNlearning.getVector.IGetInfo;
 
 import org.springframework.context.ApplicationContext;
 
-public class ValidVectorRunnable implements Runnable  {
+public class Solution2ValidVectorRunnable implements Runnable  {
 	private UserBrandPair ubpair ;
 	private ApplicationContext appContext ;
 	private int size;
-	private BP bp ;
+	private Calendar can;
 	private OutPut output;
 	
 	private int id ;
@@ -24,31 +30,18 @@ public class ValidVectorRunnable implements Runnable  {
 		this.ubpair = ubpair;
 	}
 	
-	public ValidVectorRunnable (UserBrandPair p ,int s , ApplicationContext app  , BP b , int i , OutPut o) {
+	public Solution2ValidVectorRunnable (UserBrandPair p ,int s , ApplicationContext app  , Calendar c , int i , OutPut o) {
 		this.ubpair = p;
 		this.size =s ;
 		this.appContext = app;
-		this.bp = b;
+		this.can = c;
 		this.id = i;
 		this.output = o;
 	}
 
 	public void run() {
-		double max = -Integer.MIN_VALUE;  
-        int idx = -1;  
-        double[] result = bp.test(validVector( size , ubpair));
-        for (int i = 0; i != result.length; i++) {  
-            if (result[i] > max) {  
-                max = result[i];  
-                idx = i;  
-            }  
-        }
-		if (idx == 0 ) {
-			output.process(ubpair);
-		}
 		
-		
-		
+		validVector( size , ubpair);
 		
 		System.out.println("v" + (id));
 		
@@ -58,8 +51,13 @@ public class ValidVectorRunnable implements Runnable  {
 		double[] vector = new double[size];
 		 
 		for (int i = 0 ; i < size ; i ++) {
-			IGetInfo getinfo = (IGetInfo)appContext.getBean("valid" + i);
-			vector[i] = getinfo.getData(ubpair);
+			IGetInfo getinfo = (IGetInfo)appContext.getBean("solutionGet");
+			
+			Map Pmap = new HashMap();
+			Pmap.put("sql", SQLContainer.getValidSqls().get(i));
+			Pmap.put("ubp" , ubpair);
+			
+			vector[i] = getinfo.getData(Pmap);
 			
 		}
 //		ubpair.setVector(vector);
